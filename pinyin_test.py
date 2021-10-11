@@ -11,8 +11,9 @@ hanzi = lines.split('\n')
 length = len(hanzi) - 1
 learn = True
 reviews = 0
+removed = 0
 while(learn == True):
-    index = random.randint(0,49)
+    index = random.randint(10,99)
     word = hanzi[index]
     print(word)
     again = input()
@@ -26,3 +27,10 @@ while(learn == True):
         if(check == "y" or check == "r"):
             del hanzi[index]
             length = length - 1
+            removed += 1
+    elif (again == "stop"):
+        break
+
+print("Congratuations on finishing your session!")
+print("You studied " + str(reviews) + " words in total!")
+print("You removed " + str(removed) + " words in total!")
